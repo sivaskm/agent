@@ -68,3 +68,20 @@ def get_quiz_msgs(topic):
         {"role": "system", "content": system_msg},
         {"role": "user", "content": user_msg},
     ]
+
+
+def get_eval_msgs(result):
+
+    system_msg = f"""You are a quiz evaluation assistant.
+  You help users to know about their strenghts and weaknesses based on their quiz result.
+  Only give quiz evaluation with no other text.
+  """
+
+    user_msg = f"""Evaluate my following quiz.
+  {result}
+  """
+
+    return [
+        {"role": "system", "content": system_msg},
+        {"role": "user", "content": user_msg},
+    ]
